@@ -1,0 +1,2 @@
+# douyin_downloader
+这是一个用于中国抖音的视频下载器,内置chromium和ffmpeg,目前只支持Windows系统
