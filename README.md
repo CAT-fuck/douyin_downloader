@@ -58,74 +58,108 @@ This project is a Douyin (TikTok China) video downloader built for the Windows p
 
 ---
 
-## 程序目录结构
+## 项目目录结构（源码仓库）
+
+以下为 GitHub 源码仓库中的文件结构：
 
 ```
-DouyinDownloader/
-├── main.py                    # Python 源码（V1.1.9）
-├── DouyinDownloader.exe       # 打包后的主程序可执行文件
-├── _internal/                  # PyInstaller 自动生成的运行时目录（勿删）
-├── ffmpeg.exe                  # 用于视频与音频流的合并处理
-├── ms-playwright/              # Playwright 浏览器运行环境
-├── config.json                 # 程序配置文件（自动创建，存储保存路径等）
-├── config.example.json         # 配置文件示例（上传 GitHub 用，不含敏感信息）
+douyin_downloader/
+├── 许可证                     # 项目许可证文件
 ├── README.md                   # 项目说明文档（本文件）
-├── CHANGELOG.md                # 更新日志
-├── .gitignore                  # Git 忽略规则
-└── 视频存放处/                  # 默认的视频输出目录
+├── config.example.json         # 配置文件示例模板（不含敏感信息，可公开上传）
+├── main.py                     # Python 源码（V1.2.0）
+└── requirements.txt            # Python 依赖包列表
 ```
 
 ### 文件说明
 
 | 文件/文件夹名称 | 说明 |
 | :--- | :--- |
+| 许可证 | 项目许可证文件 |
+| README.md | 项目说明文档（本文件） |
+| config.example.json | 配置文件示例模板（供用户参考，不含个人敏感信息） |
 | main.py | Python 源代码文件（开发/修改用） |
-| DouyinDownloader.exe | 主程序可执行文件（PyInstaller --onedir 打包产物） |
-| _internal/ | PyInstaller --onedir 模式自动生成的运行时目录，包含 Python 运行库和第三方依赖 |
+| requirements.txt | Python 依赖包列表（pip install -r requirements.txt 安装） |
+
+---
+
+## 发行版目录结构（用户运行目录）
+
+以下为下载解压后的发行版程序目录结构：
+
+```
+douyin_downloader_V1.2.0/
+├── douyin_downloader_V1.2.0.exe   # 打包后的主程序可执行文件（PyInstaller --onedir）
+├── ffmpeg.exe                      # 用于视频与音频流的合并处理
+├── ms-playwright/                  # Playwright 浏览器运行环境
+├── _internal/                      # PyInstaller 自动生成的运行时目录（勿删）
+├── config.json                     # 程序配置文件（首次运行自动生成，存储保存路径等）
+└── 视频存放处/                      # 默认的视频输出目录
+```
+
+### 文件说明
+
+| 文件/文件夹名称 | 说明 |
+| :--- | :--- |
+| douyin_downloader_V1.2.0.exe | 主程序可执行文件（PyInstaller --onedir 打包产物） |
 | ffmpeg.exe | 用于视频与音频流的合并处理 |
 | ms-playwright/ | Playwright 浏览器运行环境 |
+| _internal/ | PyInstaller --onedir 模式自动生成的运行时目录，包含 Python 运行库和第三方依赖 |
 | config.json | 程序配置文件（首次运行自动生成，存储保存路径、协议状态等） |
-| config.example.json | 配置文件示例模板（供用户参考，不含个人敏感信息） |
-| README.md | 项目说明文档（本文件） |
-| CHANGELOG.md | 版本更新日志 |
-| .gitignore | Git 版本控制忽略规则 |
 | 视频存放处/ | 默认的视频输出目录 |
 
 > **注意**：ffmpeg.exe 和 ms-playwright/ 属于程序运行所必需的辅助组件。请勿随意删除或移动这些文件，否则可能导致解析、下载或合并功能异常。_internal/ 目录由 PyInstaller 自动生成，请勿手动修改。
 
 ---
 
-## Directory Structure
+## Project Directory Structure (Source Repository)
+
+The following is the file structure in the GitHub source repository:
 
 ```
-DouyinDownloader/
-├── main.py                    # Python source code (V1.1.9)
-├── DouyinDownloader.exe       # Packaged main executable (PyInstaller --onedir)
-├── _internal/                  # Auto-generated runtime directory by PyInstaller (do not delete)
-├── ffmpeg.exe                  # Used for merging video and audio streams
-├── ms-playwright/              # Playwright browser runtime environment
-├── config.json                 # Program config file (auto-created, stores save path etc.)
-├── config.example.json         # Config file template (for GitHub, no sensitive info)
+douyin_downloader/
+├── LICENSE                     # Project license file
 ├── README.md                   # Project documentation (this file)
-├── CHANGELOG.md                # Changelog
-├── .gitignore                  # Git ignore rules
-└── 视频存放处/                  # Default output directory for videos
+├── config.example.json         # Config file template (no sensitive info, safe to push to GitHub)
+├── main.py                     # Python source code (V1.2.0)
+└── requirements.txt            # Python dependency list
 ```
 
 ### File Description
 
 | File/Folder Name | Description |
 | :--- | :--- |
+| LICENSE | Project license file |
+| README.md | Project documentation (this file) |
+| config.example.json | Config file template (for reference, contains no sensitive information) |
 | main.py | Python source code file (for development/modification) |
-| DouyinDownloader.exe | Main executable file (PyInstaller --onedir build output) |
-| _internal/ | Auto-generated runtime directory by PyInstaller --onedir, contains Python runtime and third-party dependencies |
+| requirements.txt | Python dependency list (install with pip install -r requirements.txt) |
+
+---
+
+## Distribution Directory Structure (Runtime Directory)
+
+The following is the directory structure after extracting the downloaded release:
+
+```
+douyin_downloader_V1.2.0/
+├── douyin_downloader_V1.2.0.exe   # Packaged main executable (PyInstaller --onedir)
+├── ffmpeg.exe                      # Used for merging video and audio streams
+├── ms-playwright/                  # Playwright browser runtime environment
+├── _internal/                      # Auto-generated runtime directory by PyInstaller (do not delete)
+├── config.json                     # Program config file (auto-created on first run, stores save path etc.)
+└── 视频存放处/                      # Default output directory for videos
+```
+
+### File Description
+
+| File/Folder Name | Description |
+| :--- | :--- |
+| douyin_downloader_V1.2.0.exe | Main executable file (PyInstaller --onedir build output) |
 | ffmpeg.exe | Used for merging video and audio streams |
 | ms-playwright/ | Playwright browser runtime environment |
+| _internal/ | Auto-generated runtime directory by PyInstaller --onedir, contains Python runtime and third-party dependencies |
 | config.json | Program configuration file (auto-created on first run, stores save path, agreement status, etc.) |
-| config.example.json | Config file template (for reference, contains no sensitive information) |
-| README.md | Project documentation (this file) |
-| CHANGELOG.md | Version changelog |
-| .gitignore | Git ignore rules |
 | 视频存放处/ | Default output directory for videos |
 
 > **Warning**: ffmpeg.exe and the ms-playwright/ directory are essential auxiliary components required for the program to function correctly. Do not delete or move these files arbitrarily, as doing so may cause parsing, downloading, or merging functionalities to fail. The _internal/ directory is auto-generated by PyInstaller - do not modify it manually.
@@ -134,7 +168,7 @@ DouyinDownloader/
 
 ## 使用方法
 
-1. **启动程序**：双击 DouyinDownloader.exe。首次启动时将显示用户协议与使用条款，请仔细阅读后根据实际情况选择是否继续使用。可勾选"不再提醒此协议"以跳过后续启动时的协议页。
+1. **启动程序**：双击 douyin_downloader_V1.2.0.exe。首次启动时将显示用户协议与使用条款，请仔细阅读后根据实际情况选择是否继续使用。可勾选"不再提醒此协议"以跳过后续启动时的协议页。
 2. **获取抖音视频链接**：在浏览器中打开需要下载的抖音视频页面（例如：https://www.douyin.com/jingxuan?modal_id=xxxxxxxxxxxxxxxx），并复制该视频页面的完整 URL。建议直接复制视频播放页地址，避免复制搜索页面、个人主页或其他无关链接。
 3. **粘贴链接**：将复制的 URL 粘贴到程序界面的"请输入抖音视频链接"输入框中。
 4. **（可选）输入视频名称**：在"视频名称"输入框中填写自定义名称，下载任务将以此命名子文件夹。不填则自动按"YYYYMMDD_HHMMSS"格式命名。
@@ -147,7 +181,7 @@ DouyinDownloader/
 
 ## Usage Instructions
 
-1. **Launch the Program**: Double-click DouyinDownloader.exe. Upon first launch, the User Agreement and Terms of Use will be displayed. Please read them carefully and decide whether to proceed. You can check "Do not remind again" to skip the agreement screen on future launches.
+1. **Launch the Program**: Double-click douyin_downloader_V1.2.0.exe. Upon first launch, the User Agreement and Terms of Use will be displayed. Please read them carefully and decide whether to proceed. You can check "Do not remind again" to skip the agreement screen on future launches.
 2. **Obtain the Douyin Video URL**: Open the desired Douyin video page in your browser (e.g., https://www.douyin.com/jingxuan?modal_id=xxxxxxxxxxxxxxxx) and copy the full URL. It is recommended to copy the direct video playback page URL rather than search pages, profile pages, or other irrelevant links.
 3. **Paste the URL**: Paste the copied URL into the "Input Douyin Video URL" field in the program interface.
 4. **(Optional) Enter Video Name**: Enter a custom name in the "Video Name" field. The download task will use this as the sub-folder name. If left blank, it auto-names using "YYYYMMDD_HHMMSS" format.
@@ -210,7 +244,7 @@ During execution, the program displays real-time processing status in the window
 
 1. **出现 403 Forbidden**：若程序成功解析出视频地址，但在下载时提示 403 Forbidden，通常表示当前媒体地址的访问受到服务端限制。可能原因包括：媒体地址具有时效性、地址与请求环境绑定、CDN/服务端访问限制、链接失效或当前网络环境不满足服务端要求。这并不一定代表解析失败。建议：重新复制最新的视频页面 URL、重新解析并尽快下载。若仍失败，请保存日志后反馈。
 2. **只有视频没有声音**：若下载目录中存在 video_*.mp4 和 audio_*.mp3 但缺少最终的 merge_*.mp4，请优先检查：ffmpeg.exe 是否存在、是否被杀毒软件隔离、程序目录是否被移动、FFmpeg 是否具备执行权限。也可查看日志中的 FFmpeg 健康检查结果和合并策略失败原因。
-3. **程序无法启动**：请检查程序目录是否完整。至少应确认 DouyinDownloader.exe、ffmpeg.exe 及 ms-playwright/ 均存在。请勿仅复制 .exe 文件单独运行。
+3. **程序无法启动**：请检查程序目录是否完整。至少应确认 douyin_downloader_V1.2.0.exe、ffmpeg.exe 及 ms-playwright/ 均存在。请勿仅复制 .exe 文件单独运行。
 4. **解析失败**：可尝试：确认复制的是抖音视频页面 URL、重新打开视频后再次复制链接、重启程序、检查网络连接或尝试其他公开可访问的视频。若仍失败，请提交完整日志。
 5. **下载文件被覆盖**：程序已内置文件夹名称冲突检测机制。如果两次下载使用相同名称，程序会自动在文件夹名后追加 _1、_2 等后缀，不会覆盖已有文件。日志中会打印提醒信息。
 
@@ -220,7 +254,7 @@ During execution, the program displays real-time processing status in the window
 
 1. **403 Forbidden Error**: If the program successfully parses the video URL but encounters a 403 Forbidden error during download, it usually indicates that access to the media URL is restricted by the server. Possible reasons include: URL expiration, environment binding, CDN/server access restrictions, invalid links, or network environment mismatches. This does not necessarily mean parsing has failed. Suggested actions: Copy the latest video page URL again, re-parse, and download promptly. If it still fails, save the log and report the issue.
 2. **Video Without Audio**: If video_*.mp4 and audio_*.mp3 exist in the download directory but the final merge_*.mp4 is missing, please check: whether ffmpeg.exe exists, whether it has been quarantined by antivirus software, whether the program directory has been moved, and whether FFmpeg has execution permissions. Also check the log for FFmpeg health check results and merge strategy failure reasons.
-3. **Program Fails to Launch**: Verify that the program directory is complete. Ensure that DouyinDownloader.exe, ffmpeg.exe, and the ms-playwright/ directory are all present. Do not copy and run the .exe file alone.
+3. **Program Fails to Launch**: Verify that the program directory is complete. Ensure that douyin_downloader_V1.2.0.exe, ffmpeg.exe, and the ms-playwright/ directory are all present. Do not copy and run the .exe file alone.
 4. **Parsing Failure**: Try: confirming that the copied URL is a valid Douyin video page URL, reopening the video and copying the link again, restarting the program, checking the network connection, or trying another publicly accessible video. If the issue persists, please submit the complete log.
 5. **Downloaded Files Overwritten**: The program includes built-in folder name conflict detection. If two downloads use the same name, the program automatically appends _1, _2 suffixes to the folder name, preventing file overwrites. A reminder message will be printed in the log.
 
@@ -295,7 +329,7 @@ Users assume full legal responsibility for any consequences arising from the use
 如果遇到问题，请尽量提供以下信息以便排查：
 
 1. Windows 操作系统版本
-2. 程序版本号（如 V1.1.9）
+2. 程序版本号（如 V1.2.0）
 3. 使用的视频链接类型
 4. 程序完整运行日志
 5. 错误截图
@@ -310,7 +344,7 @@ Users assume full legal responsibility for any consequences arising from the use
 If you encounter any issues, please provide the following information to facilitate troubleshooting:
 
 1. Windows OS version
-2. Program version number (e.g., V1.1.9)
+2. Program version number (e.g., V1.2.0)
 3. Type of video URL used
 4. Complete program runtime log
 5. Screenshot of the error
@@ -322,54 +356,46 @@ If you encounter any issues, please provide the following information to facilit
 
 ## 更新日志
 
-### V1.1.9（当前版本）
+### V1.2.0（当前版本 · Stable Release）
+
+> 这是整合 v1.0.0 ~ v1.1.9 所有改进的稳定版发布。v1.1.9 作为测试版经过验证后升级为 v1.2.0 正式发行版。
+
+- **新增**：文件夹名称冲突检测机制，防止同名下载任务覆盖已有文件（自动追加 _1、_2 后缀）
+- **新增**：视频名称自定义输入框，支持自定义下载子文件夹名称
+- **新增**：每次下载自动创建独立子文件夹，文件管理更清晰
+- **新增**："打开保存文件夹"按钮，一键弹出资源管理器打开保存目录
+- **新增**：下载完成后自动打开下载子文件夹（直接显示三个生成文件）
+- **新增**：视频名称输入框功能
+- **新增**：JSON 配置持久化（保存路径、协议状态自动保存）
+- **新增**："不再提醒"复选框（协议页记住用户选择）
+- **新增**：@retry 下载重试装饰器（网络失败自动重试 3 次）
+- **新增**：FFmpeg 健康检查（文件存在性、文件头检测、版本执行测试）
+- **新增**：文件头类型检测（自动识别 MP4/MP3/H.264 等格式）
+- **新增**：ffprobe 编码信息探测
+- **新增**：原始字节捕获 stderr（避免编码错误导致日志丢失）
+- **新增**：4 种合并策略降级机制（直接复制 -> 流复制 -> 重新编码 -> 自动流选择 -> 仅视频流）
+- **新增**：直接复制自带音频视频策略（FFmpeg 合并优化）
+- **修复**：Python 三元表达式优先级错误导致的逻辑异常
+- **修复**：输出文件名与输入文件名相同时的文件冲突问题
+- **修复**：同名文件夹重复下载导致文件覆盖的 Bug
+- **修复**：import shutil 缺失导致的运行错误
+- **修复**：JSON 配置文件加载异常问题
+- **更新**：邮箱地址更新为 catmiao14514@163.com
+- **更新**：作者名更新为 CAT是猫不是喵
+- **更新**：打包文件名更新为 douyin_downloader_V1.2.0.exe
+
+### V1.1.9（测试版）
 
 - **新增**：文件夹名称冲突检测机制，防止同名下载任务覆盖已有文件（自动追加 _1、_2 后缀）
 - **新增**：视频名称自定义输入框，支持自定义下载子文件夹名称
 - **新增**：每次下载自动创建独立子文件夹，文件管理更清晰
 - **修复**：同名文件夹重复下载导致文件覆盖的 Bug
 
-### V1.1.8
-
-- **新增**："打开保存文件夹"按钮，一键弹出资源管理器打开保存目录
-- **新增**：下载完成后自动打开下载子文件夹（直接显示三个生成文件）
-
-### V1.1.7
-
-- **新增**：视频名称输入框功能
-- **新增**：每个下载任务自动创建子文件夹
-- **更新**：邮箱地址更新为 catmiao14514@163.com
-- **更新**：作者名更新为 CAT是猫不是喵
-
-### V1.1.6
-
-- **新增**：JSON 配置持久化（保存路径、协议状态自动保存）
-- **新增**："不再提醒"复选框（协议页记住用户选择）
-- **新增**：@retry 下载重试装饰器（网络失败自动重试 3 次）
-- **修复**：import shutil 缺失导致的运行错误
-- **修复**：JSON 配置文件加载异常问题
-- **更新**：邮箱更新为 catmiao14514@163.com
-- **更新**：作者名更新为 CAT是猫不是喵
-
-### V1.1.5
-
-- **修复**：Python 三元表达式优先级错误导致的逻辑异常
-- **修复**：输出文件名与输入文件名相同时的文件冲突问题
-- **新增**：直接复制自带音频视频策略（FFmpeg 合并优化）
-
-### V1.1.4
-
-- **新增**：FFmpeg 健康检查（文件存在性、文件头检测、版本执行测试）
-- **新增**：文件头类型检测（自动识别 MP4/MP3/H.264 等格式）
-- **新增**：ffprobe 编码信息探测
-- **新增**：原始字节捕获 stderr（避免编码错误导致日志丢失）
-- **新增**：4 种合并策略降级机制（直接复制 -> 流复制 -> 重新编码 -> 自动流选择 -> 仅视频流）
-
 ---
 
 ## Project Status
 
-The current version is a Windows packaged stable release. The core workflow is fully implemented: URL Input -> Page Parsing -> Video/Audio URL Extraction -> Video Download -> Audio Download -> FFmpeg Merge -> Final MP4 Generation. In cases of 403 responses from media servers or invalid links, further investigation based on specific logs is required.
+The current version (V1.2.0) is a Windows packaged stable release, integrating all improvements from v1.0.0 through v1.1.9. The core workflow is fully implemented: URL Input -> Page Parsing -> Video/Audio URL Extraction -> Video Download -> Audio Download -> FFmpeg Merge -> Final MP4 Generation. In cases of 403 responses from media servers or invalid links, further investigation based on specific logs is required.
 
 ---
 
